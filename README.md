@@ -42,7 +42,7 @@ Bill-splitter/
 │   └── style.css
 │
 └── README.md
-
+```
 
 ## Deployment
 
