@@ -85,7 +85,7 @@ const shareMessage =
 // ========================================
 
 const JAVA_BACKEND_URL =
-    "http://localhost:8080/calculate";
+    "https://bill-splitter-backend-nu.vercel.app";
 
 
 // ========================================
