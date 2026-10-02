@@ -42,3 +42,24 @@ Bill-splitter/
 │   └── style.css
 │
 └── README.md
+
+
+## Deployment
+
+The application is deployed using Vercel, with the frontend and backend deployed separately.
+
+The frontend communicates with the deployed Java backend through its API endpoints.
+
+## Live Demo
+
+[Bill Splitter](https://bill-splitter-main.vercel.app/)
+
+## Repository
+
+[GitHub Repository](https://github.com/jayantsingh0702/Bill-splitter)
+
+## Author
+
+**Jayant Singh**
+
+[GitHub Profile](https://github.com/jayantsingh0702)
