@@ -74,6 +74,6 @@ As there is no requirement for two deployments in the other versions of this app
 
 ## Author
 
-**Jayant Singh**
+**Jayant Singh** & team
 
 [GitHub Profile](https://github.com/jayantsingh0702)
