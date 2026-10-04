@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Smart Bill Splitter</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-overlay">
+
+            <div class="hero-content">
+
+                <p class="hero-small">
+                    SIMPLE • FAIR • SMART
+                </p>
+
+                <h1>
+                    Split the bill.<br>
+                    Enjoy the moment.
+                </h1>
+
+                <p>
+                    Easily divide your bill among friends
+                    and know exactly what everyone pays.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+
+        <!-- ================= INPUT CARD ================= -->
+
+        <section class="card input-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        BILL DETAILS
+                    </p>
+
+                    <h2>
+                        Let's split the bill
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- BILL AMOUNT -->
+
+            <div class="input-group">
+
+                <label for="amount">
+                    Total Bill Amount
+                </label>
+
+                <div class="amount-input-wrapper">
+
+                    <span>₹</span>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="Enter bill amount"
+                        min="0"
+                        step="0.01"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- NUMBER OF PEOPLE -->
+
+            <div class="input-group">
+
+                <label for="people">
+                    Number of People
+                </label>
+
+                <input
+                    type="number"
+                    id="people"
+                    value="2"
+                    min="2"
+                    max="20"
+                    placeholder="Enter number of people"
+                >
+
+            </div>
+
+
+            <!-- NAMES -->
+
+            <div class="option-row">
+
+                <div>
+
+                    <strong>
+                        Add names
+                    </strong>
+
+                    <p>
+                        Add names to show individual shares.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="namesCheck"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <div
+                id="namesContainer"
+                class="names-container hidden"
+            ></div>
+
+
+            <!-- TIP -->
+
+            <div class="option-row">
+
+                <div>
+
+                    <strong>
+                        Add tip
+                    </strong>
+
+                    <p>
+                        Add a tip amount to the bill.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="tipCheck"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <div
+                id="tipContainer"
+                class="optional-input hidden"
+            >
+
+                <label for="tip">
+                    Tip Amount
+                </label>
+
+                <div class="percentage-input">
+
+                    <input
+                        type="number"
+                        id="tip"
+                        min="0"
+                        step="0.01"
+                        placeholder="e.g. 100"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ERROR -->
+
+            <div
+                id="generalError"
+                class="error-message"
+            ></div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="main-buttons">
+
+                <button
+                    type="button"
+                    id="calculateButton"
+                    class="calculate-button"
+                >
+                    Calculate Bill
+                </button>
+
+                <button
+                    type="button"
+                    id="resetButton"
+                    class="reset-button"
+                >
+                    New Bill
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= RESULT CARD ================= -->
+
+        <section class="card result-card">
+
+
+            <!-- EMPTY RESULT -->
+
+            <div
+                id="emptyResult"
+                class="empty-result"
+            >
+
+                <div class="empty-icon">
+                    ₹
+                </div>
+
+                <h3>
+                    Your bill summary
+                </h3>
+
+                <p>
+                    Enter the bill details and calculate
+                    to see the result here.
+                </p>
+
+            </div>
+
+
+            <!-- RESULT -->
+
+            <div
+                id="billActions"
+                class="hidden"
+            >
+
+                <div class="result-header">
+
+                    <div>
+
+                        <p class="section-label">
+                            YOUR RESULT
+                        </p>
+
+                        <h2>
+                            Bill Summary
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BILL DETAILS -->
+
+                <div class="bill-details">
+
+                    <h3 class="bill-details-title">
+                        Bill Details
+                    </h3>
+
+
+                    <div class="result-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="subtotal">
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div
+                        id="tipResultRow"
+                        class="result-row hidden"
+                    >
+
+                        <span>
+                            Tip
+                        </span>
+
+                        <strong id="tipAmount">
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bill-divider"></div>
+
+
+                    <div class="result-row bill-total">
+
+                        <span>
+                            Total Bill
+                        </span>
+
+                        <strong id="totalBill">
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PER PERSON -->
+
+                <div class="person-result">
+
+                    <div>
+
+                        <span>
+                            Group Split
+                        </span>
+
+                        <strong id="peopleText">
+                            0 people
+                        </strong>
+
+                    </div>
+
+
+                    <div class="person-amount">
+
+                        <small>
+                            Each Person Pays
+                        </small>
+
+                        <strong id="perPerson">
+                            ₹0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INDIVIDUAL SHARES -->
+
+                <div
+                    id="individualResults"
+                    class="individual-results hidden"
+                >
+
+                    <h3>
+                        Individual Shares
+                    </h3>
+
+                    <div
+                        id="individualList"
+                    ></div>
+
+                </div>
+
+
+                <!-- ACTION BUTTONS -->
+
+                <div class="bill-actions-buttons">
+
+                    <button
+                        type="button"
+                        id="printButton"
+                        class="print-button"
+                    >
+                        <span>🖨</span>
+                        Print Bill
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="shareButton"
+                        class="share-button"
+                    >
+                        <span>📤</span>
+                        Share Bill
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="shareMessage"
+                    class="share-message"
+                ></div>
+
+
+                <p class="result-note">
+
+                    The calculation is performed by the
+                    Java backend.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Fast
+            </h3>
+
+            <p>
+                Calculate your share in seconds.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                👥
+            </div>
+
+            <h3>
+                Fair
+            </h3>
+
+            <p>
+                Everyone gets an equal share.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🧾
+            </div>
+
+            <h3>
+                Practical
+            </h3>
+
+            <p>
+                Print or share the final bill.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Smart Bill Splitter
+        </p>
+
+        <span>
+            Java FSD Mini Project
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
