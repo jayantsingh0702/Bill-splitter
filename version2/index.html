@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SplitEasy | Bill Splitter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="top">
+            <span class="logo">SPLIT<span>EASY</span></span>
+            <span class="tag">BILL SPLITTER</span>
+        </div>
+
+        <h1>Split the bill.<br><em>Keep the fun.</em></h1>
+
+        <p class="subtitle">
+            A simple way to divide expenses with friends.
+        </p>
+
+        <label>Bill Amount</label>
+        <div class="input-box">
+            <span>₹</span>
+            <input type="number" id="bill" placeholder="Enter bill amount">
+        </div>
+
+        <label>Tip Amount <small>Optional</small></label>
+        <div class="input-box">
+            <span>₹</span>
+            <input type="number" id="tip" placeholder="Enter tip amount">
+        </div>
+
+        <label>Number of People</label>
+        <input type="number" id="people" placeholder="Enter number of people">
+
+        <div class="button-group">
+            <button onclick="calculateBill()">Calculate Split →</button>
+            <button class="btn-reset" onclick="resetBill()">Reset</button>
+        </div>
+
+        <div class="result" id="result">
+            <span>YOUR RESULT</span>
+            <p>Total Bill: ₹0.00</p>
+            <p>Each Person: ₹0.00</p>
+        </div>
+
+        <div class="footer">
+            Simple. Fair. Done.
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
