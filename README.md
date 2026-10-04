@@ -7,7 +7,7 @@ The application uses a Java backend to perform the bill calculations and a light
 **It is important to note that this project exists in three versions, one of which uses java as a backend. More information on the same will be provided below**
 - Version 1: Simple bill splitter with java backend. Visually appealing design.
 - Version 2: Same visual appeal as v1, but without the requirement of java for simplicity and ease of use.
-- Version 3: A fresh new and minimal feel without the complexity of a java backend.
+- Version 3: A fresh new and minimal feel without the complexity of a java backend. \
 **The folders that represent the above said versions can be found in the structures section of this README file.**
 
 
@@ -50,16 +50,16 @@ Bill-splitter /
 └── version3
     └── ...
 
-"Version 1" is enclosed in the directory *version1_java* with different directories for Front and Backend(java).
-"Version 2" is enclosed in the directory *version2*
-"Version 3" is enclosed in the directory *version3*
+"Version 1" is enclosed in the directory version1_java with different directories for Front and Backend(java).
+"Version 2" is enclosed in the directory version2
+"Version 3" is enclosed in the directory version3
 ```
 
 ## Deployment
 
 The application is deployed using Vercel, with the frontend and backend deployed separately.
 
-The frontend communicates with the deployed Java backend for **Version 1** through its API endpoints.
+The frontend communicates with the deployed Java backend for **Version 1** through its API endpoints. \
 As there is no requirement for two deployments in the other versions of this application, they are deployed as a sinular project, the links to all these deployments is provided in the **"Live Demo"** section below.
 
 ## Live Demo
